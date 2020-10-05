@@ -1,0 +1,20 @@
+[ req ]
+default_bits = 2048
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+x509_extensions = v3_req
+prompt = no
+
+[ req_distinguished_name ]
+countryName = US
+stateOrProvinceName = Texas
+localityName = Dallas
+organizationName = GitHub
+commonName = *.trent-j-3baba5342.service.bpdev-us-east-1.github.net
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
