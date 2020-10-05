@@ -41,7 +41,7 @@ generate_and_trust_root_ca () {
 
 generate_ssl_config () {
     cp "$SSL_CONFIG_TEMPLATE" "$SSL_CONFIG"
-    printf 'DNS.1 = *.%s\nDNS.2 = %s\n' "$HOST" "$HOST" >> "$SSL_CONFIG"
+    printf 'commonName = *.%s\n\n[alt_names]\nDNS.1 = *.%s\nDNS.2 = %s\n' "$HOST" "$HOST" "$HOST" >> "$SSL_CONFIG"
 }
 
 generate_ghes_cert () {
